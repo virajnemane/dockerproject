@@ -1,0 +1,22 @@
+version: "3"
+services:
+  db:
+    image: mysql
+    networks:
+      - "wordnet"
+    volumes:
+      - "mysqldata:/var/lib/mysql"
+    env_file:
+      - secret-stuff.env
+  wordpress:
+    image: wordpress
+    ports:
+      - "8053:80"
+    networks:
+      - "wordnet"
+    env_file:
+      - secret-stuff.env
+networks:
+  wordnet:
+volumes:
+  mysqldata:
