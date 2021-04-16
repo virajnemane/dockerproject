@@ -10,3 +10,9 @@
 root@ip-10-21-150-114:~/proj/task2# curl localhost:80
 
 This is viraj nginx server
+
+--------------------------------------------------
+
+docker build -t virajnemane/mynginx:v2 --build-arg tag=latest --build-arg message="This is viraj nginx server super version latest v2" .
+
+docker run -itd -p 80:80 virajnemane/mynginx:v2
